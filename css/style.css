@@ -1,0 +1,515 @@
+/* ==========================================================================
+   ОТЧЁТ ПО ЕДИНИЦАМ ИЗМЕРЕНИЯ (ДЛЯ ДОКУМЕНТАЦИИ И ЗАЩИТЫ ПРОЕКТА):
+   1. px (пиксели) — абсолютная фиксированная единица. Применена для тонких границ
+      (border: 1px/2px solid), радиусов скругления (border-radius: 6px/8px) и
+      смещения теней (box-shadow). Это предотвращает субпиксельное размытие и
+      гарантирует четкость графических контуров при любом разрешении.
+   2. rem (root em) — относительная единица к размеру шрифта корня <html> (16px).
+      Использована для основных размеров текста (font-size), отступов секций,
+      шапки, футера (margin, padding). Обеспечивает масштабируемость и доступность
+      интерфейса при изменении масштаба шрифта в настройках браузера.
+   3. % (проценты) — относительная единица от ширины/высоты родительского контейнера.
+      Применена для адаптивной ширины таблиц (width: 100%), изображений (max-width: 100%)
+      и колонок формы, создавая эластичный макет.
+   4. em — относительная единица к размеру шрифта текущего элемента. Использована
+      для межбуквенных интервалов (letter-spacing: 0.03em) и компактных отступов кнопок,
+      пропорционально зависящих от размера шрифта конкретного блока.
+   5. vh (viewport height) — единица высоты области просмотра. Применена для min-height: 100vh
+      у контейнера body, чтобы футер гарантированно прижимался к низу окна даже при
+      малом объеме содержимого.
+   ========================================================================== */
+
+/* ==========================================================================
+   ПАЛИТРА ЦВЕТОВ (КАЖДЫЙ ЦВЕТ ЗАПИСАН В 3-Х РАЗНЫХ ФОРМАТАХ: HEX, RGB, HSL):
+   - Цвет 1 (Темный кофейный):  HEX: #2c1810 | RGB: rgb(44, 24, 16)   | HSL: hsl(17, 47%, 12%)
+   - Цвет 2 (Теплый карамель):  HEX: #c87a32 | RGB: rgb(200, 122, 50) | HSL: hsl(29, 60%, 49%)
+   - Цвет 3 (Кремовый фон):     HEX: #fbf8f5 | RGB: rgb(251, 248, 245)| HSL: hsl(30, 43%, 97%)
+   - Цвет 4 (Графитово-черный): HEX: #2d2926 | RGB: rgb(45, 41, 38)   | HSL: hsl(26, 8%, 16%)
+   ========================================================================== */
+
+/* Сброс стилей и базовая модель Box Model */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   СЕЛЕКТОРЫ ПО ЭЛЕМЕНТУ: БАЗОВАЯ ТИПОГРАФИКА И СТРУКТУРА
+   ========================================================================== */
+
+body {
+  /* Единица vh: минимальная высота страницы по высоте экрана */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  /* ШРИФТ 1 (Основной текст): гарнитура без засечек (Sans-serif) */
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  /* Единица rem: базовый размер шрифта для доступности */
+  font-size: 1rem;
+  /* Вес шрифта */
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+
+  /* Цвет 3 (Кремовый фон): Формат HEX */
+  background-color: #fbf8f5;
+
+  /* Цвет 4 (Графитовый текст): Формат HEX */
+  color: #2d2926;
+}
+
+/* ==========================================================================
+   ШАПКА И НАВИГАЦИЯ (ЭЛЕМЕНТЫ, КЛАССЫ, ОТСТУПЫ, HOVER)
+   ========================================================================== */
+
+header {
+  /* Цвет 1 (Темный кофейный): Формат HEX */
+  background-color: #2c1810;
+  /* Единица rem для внешних и внутренних отступов шапки (Box Model) */
+  padding: 1.25rem 2rem;
+  /* Единица px: фиксированная нижняя полоса-разделитель */
+  border-bottom: 3px solid #c87a32;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.25rem 0;
+}
+
+/* Стилизация ссылок навигации */
+nav a {
+  display: inline-block;
+  /* Снятие подчеркивания */
+  text-decoration: none;
+  color: #ffffff;
+  /* ШРИФТ 1: задаем размер и вес */
+  font-size: 1.05rem;
+  font-weight: 600;
+  /* Единица em: отступы кнопок навигации масштабируются пропорционально шрифту */
+  padding: 0.55em 1.2em;
+  letter-spacing: 0.03em;
+  /* Единица px: скругление углов */
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: all 0.25s ease-in-out;
+}
+
+/* Эффект при наведении: меняет цвет, фон, тень и сдвигает элемент (transform) */
+nav a:hover {
+  color: #ffffff;
+  /* Цвет 2 (Карамельный акцент): Формат RGB */
+  background-color: rgb(200, 122, 50);
+  /* Единица px: граница и смещение при наведении */
+  border: 1px solid #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* СЕЛЕКТОР ПО КЛАССУ: активная страница */
+nav a.active {
+  /* Цвет 2 (Карамельный акцент): Формат HEX */
+  background-color: #c87a32;
+  color: #ffffff;
+  font-weight: 700;
+  /* Единица px: белая окантовка активной ссылки */
+  border: 1px solid #ffffff;
+}
+
+/* ==========================================================================
+   ОСНОВНАЯ ЧАСТЬ (MAIN), СЕКЦИИ И ЗАГОЛОВКИ
+   ========================================================================== */
+
+main {
+  flex: 1 0 auto;
+  /* Единица %: адаптивная ширина с ограничением в px */
+  width: 92%;
+  max-width: 1040px;
+  /* Единица rem: центрирование и отступы (Box Model) */
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* ШРИФТ 2 (Заголовки и цитаты): классическая антиква с засечками (Serif) */
+h1, h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  /* Цвет 1 (Темный кофейный): Формат RGB */
+  color: rgb(44, 24, 16);
+  font-weight: 700;
+}
+
+h1 {
+  /* Единица rem для масштабируемого заголовка страницы */
+  font-size: 2.1rem;
+  text-align: center;
+  /* Явно выраженный Box Model: margin, padding, border */
+  margin-bottom: 2rem;
+  padding-bottom: 0.8rem;
+  /* Единица px для декоративной подчеркивающей линии */
+  border-bottom: 2px solid #c87a32;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: left;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Селектор по элементу: карточки секций с явным Box Model */
+section {
+  /* Цвет 3 (Кремовый фон): Формат RGB */
+  background-color: rgb(251, 248, 245);
+  /* Единица rem для отступов блока */
+  margin-bottom: 2rem;
+  padding: 1.75rem;
+  /* Единица px: граница и скругление */
+  border: 1px solid #e5dbd0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(44, 24, 16, 0.05);
+}
+
+/* Селектор по элементу: параграфы и списки */
+p, li {
+  /* Цвет 4 (Графитовый текст): Формат RGB */
+  color: rgb(45, 41, 38);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.9rem;
+  text-align: justify;
+}
+
+ul, ol {
+  /* Единица rem: внутренний отступ для маркеров списка */
+  padding-left: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.6rem;
+  text-align: left;
+}
+
+/* ==========================================================================
+   ИЗОБРАЖЕНИЯ, ФИГУРЫ И ЦИТАТЫ (FIGURE, IMG, BLOCKQUOTE)
+   ========================================================================== */
+
+figure {
+  /* Единица %: ширина контейнера изображения */
+  width: 100%;
+  margin: 1.5rem 0;
+  padding: 0.75rem;
+  background-color: #ffffff;
+  /* Единица px: тонкая рамка вокруг карточки фото */
+  border: 1px solid #e0d4c6;
+  border-radius: 6px;
+  text-align: center;
+}
+
+figure img {
+  /* Единица %: изображение адаптируется под ширину родителя */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #6d5d52;
+  margin-top: 0.6rem;
+  text-align: center;
+  font-style: italic;
+}
+
+blockquote {
+  /* ШРИФТ 2: антиква для цитат */
+  font-family: Georgia, 'Times New Roman', serif;
+  /* Цвет 4 (Графитовый текст): Формат HSL */
+  color: hsl(26, 8%, 16%);
+  font-size: 1.1rem;
+  font-style: italic;
+  /* Box Model: левая акцентная полоса и внутренний отступ */
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  background-color: #f3ece3;
+  /* Единица px: толстая акцентная полоса слева */
+  border-left: 5px solid #c87a32;
+  border-radius: 0 6px 6px 0;
+}
+
+blockquote footer {
+  /* Сброс стилей общего футера для вложенного футера цитаты */
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0.5rem 0 0 0;
+  margin: 0;
+  color: #5c4e43;
+  font-size: 0.95rem;
+  font-style: normal;
+  text-align: right;
+}
+
+/* ==========================================================================
+   СТИЛИЗАЦИЯ ТАБЛИЦЫ (ЗАДАЧА A)
+   ========================================================================== */
+
+table {
+  /* Единица %: таблица растягивается на всю ширину родительского контейнера */
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  border: 1px solid #d8cbbf;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+caption {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  /* Цвет 1 (Темный кофейный): Формат RGB */
+  color: rgb(44, 24, 16);
+  padding: 0.75rem 0;
+  text-align: left;
+}
+
+th, td {
+  /* Единицы rem и px: читаемые отступы и границы ячеек */
+  padding: 0.8rem 1rem;
+  border: 1px solid #e3d7cb;
+  text-align: left;
+  line-height: 1.4;
+}
+
+/* Заголовки таблицы thead */
+thead th {
+  /* Цвет 1 (Темный кофейный): Формат HSL */
+  background-color: hsl(17, 47%, 12%);
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* Заголовки строк в теле таблицы */
+tbody th {
+  font-weight: 600;
+  /* Цвет 1 (Темный кофейный): Формат RGB */
+  color: rgb(44, 24, 16);
+  background-color: #f7f2ec;
+}
+
+/* Чередующийся фон строк таблицы (зебра для читаемости) */
+tbody tr:nth-child(even) {
+  /* Цвет 3 (Кремовый фон): Формат HSL */
+  background-color: hsl(30, 43%, 97%);
+}
+
+/* Подсветка строки при наведении курсора */
+tbody tr:hover {
+  background-color: #eee4d9;
+}
+
+/* Итоговая строка таблицы tfoot */
+tfoot {
+  /* Цвет 3 (Кремовый фон): Формат HSL */
+  background-color: hsl(30, 43%, 97%);
+  font-style: italic;
+}
+
+tfoot th, tfoot td {
+  border-top: 2px solid #c87a32;
+  font-weight: 600;
+  color: #3b2c23;
+}
+
+/* ==========================================================================
+   СТИЛИЗАЦИЯ ФОРМЫ И СОСТОЯНИЯ :FOCUS (ЗАДАЧА B)
+   ========================================================================== */
+
+form {
+  /* Единица %: ширина формы */
+  width: 100%;
+  margin-top: 1rem;
+}
+
+fieldset {
+  /* Цвет 3 (Кремовый фон): Формат HSL */
+  background-color: hsl(30, 43%, 97%);
+  /* Единица rem: внутренние и внешние отступы fieldset */
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  /* Единица px: рамка и скругление */
+  border: 1px solid #d8cbbf;
+  border-radius: 8px;
+}
+
+legend {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  /* Цвет 1 (Темный кофейный): Формат RGB */
+  color: rgb(44, 24, 16);
+  padding: 0 0.5rem;
+}
+
+label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: #382c23;
+}
+
+/* Текстовые поля, email, дата, числа и textarea */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+textarea {
+  /* Единица %: растягивание по ширине контейнера формы */
+  width: 100%;
+  /* Единица rem для внутренних отступов полей */
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 0.9rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #2d2926;
+  background-color: #ffffff;
+  /* Единица px: рамка поля */
+  border: 1px solid #c4b5a6;
+  border-radius: 6px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Радиокнопки и чекбоксы */
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.75rem;
+  vertical-align: middle;
+  accent-color: #c87a32;
+  cursor: pointer;
+}
+
+/* Соседние лейблы радиокнопок и чекбоксов располагаем inline */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  display: inline-block;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+}
+
+/* ЗАМЕТНОЕ СОСТОЯНИЕ :FOCUS У ВСЕХ ПОЛЕЙ ВВОДА */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  outline: none;
+  /* Цвет 2 (Карамельный акцент): Формат HSL */
+  border-color: hsl(29, 60%, 49%);
+  /* Заметная светящаяся ореола фокуса для доступности */
+  box-shadow: 0 0 0 3px rgba(200, 122, 50, 0.3);
+  background-color: #ffffff;
+}
+
+/* Кнопка отправки формы submit */
+button[type="submit"] {
+  display: inline-block;
+  /* Цвет 2 (Карамельный акцент): Формат HSL */
+  background-color: hsl(29, 60%, 49%);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  /* Единицы em и px для отступов и скругления */
+  padding: 0.75em 2em;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+button[type="submit"]:hover {
+  /* Цвет 1 (Темный кофейный): Формат HEX */
+  background-color: #2c1810;
+  color: #ffffff;
+  border-color: #c87a32;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(44, 24, 16, 0.25);
+}
+
+button[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(200, 122, 50, 0.4);
+}
+
+/* ==========================================================================
+   СЕЛЕКТОР ПО УНИКАЛЬНОМУ ID (СТРОГО ОДИН НА СТРАНИЦЕ)
+   ========================================================================== */
+
+/* ID уникального обучающего медиа-фрейма на странице about.html */
+#espresso-guide-video {
+  display: block;
+  /* Единица %: адаптивная ширина */
+  width: 100%;
+  max-width: 640px;
+  height: 360px;
+  margin: 1.25rem auto;
+  /* Единица px: обрамление и тень */
+  border: 3px solid #2c1810;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(44, 24, 16, 0.2);
+}
+
+/* ==========================================================================
+   ПОДВАЛ САЙТА (FOOTER)
+   ========================================================================== */
+
+footer {
+  /* Цвет 1 (Темный кофейный): Формат HSL */
+  background-color: hsl(17, 47%, 12%);
+  color: #d8cbbf;
+  /* Единица rem: отступы футера */
+  padding: 1.5rem 2rem;
+  margin-top: 3rem;
+  text-align: center;
+  /* Единица px: верхняя акцентная граница */
+  border-top: 2px solid #c87a32;
+}
+
+footer p {
+  color: #d8cbbf;
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* Внешняя ссылка */
+a[target="_blank"] {
+  color: #c87a32;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+a[target="_blank"]:hover {
+  /* Цвет 1 (Темный кофейный): Формат HEX */
+  color: #2c1810;
+}

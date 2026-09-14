@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты и обратная связь — Культура кофе</title>
+  <meta name="description" content="Свяжитесь с нами: запишитесь на кофейную дегустацию или задайте вопрос экспертам о кофе.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Основная навигация">
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О культуре кофе</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Свяжитесь с нами и запишитесь на каппинг</h1>
+
+    <section>
+      <h2>Форма обратной связи</h2>
+      <p>Заполните форму ниже, чтобы задать вопрос экспертам по кофе или записаться на открытую дегустацию свежих сортов спешелти арабики.</p>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Личные данные</legend>
+
+          <p>
+            <label for="user-name">Ваше имя:</label>
+            <input
+              type="text"
+              id="user-name"
+              name="user_name"
+              placeholder="Например, Алексей"
+              required
+            >
+          </p>
+
+          <p>
+            <label for="user-email">Электронная почта:</label>
+            <input
+              type="email"
+              id="user-email"
+              name="user_email"
+              placeholder="alex@example.com"
+              required
+            >
+          </p>
+
+          <p>
+            <label for="visit-date">Желаемая дата визита или дегустации:</label>
+            <input
+              type="date"
+              id="visit-date"
+              name="visit_date"
+            >
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Кофейные предпочтения</legend>
+
+          <p>
+            <label for="coffee-cups">Сколько чашек кофе вы выпиваете в день?</label>
+            <input
+              type="number"
+              id="coffee-cups"
+              name="coffee_cups"
+              min="1"
+              max="10"
+              value="2"
+            >
+          </p>
+
+          <p>Ваш предпочитаемый кофейный напиток:</p>
+          <p>
+            <input
+              type="radio"
+              id="drink-espresso"
+              name="favorite_drink"
+              value="espresso"
+              checked
+            >
+            <label for="drink-espresso">Эспрессо / Доппио</label>
+          </p>
+          <p>
+            <input
+              type="radio"
+              id="drink-milk"
+              name="favorite_drink"
+              value="cappuccino"
+            >
+            <label for="drink-milk">Капучино / Флэт уайт</label>
+          </p>
+          <p>
+            <input
+              type="radio"
+              id="drink-filter"
+              name="favorite_drink"
+              value="filter"
+            >
+            <label for="drink-filter">Фильтр-кофе (V60 / аэропресс)</label>
+          </p>
+
+          <p>
+            <input
+              type="checkbox"
+              id="newsletter-subscription"
+              name="newsletter"
+              value="yes"
+            >
+            <label for="newsletter-subscription">Получать ежемесячный дайджест о свежих поступлениях зерна и мероприятиях</label>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Ваше сообщение</legend>
+
+          <p>
+            <label for="user-message">Комментарий или вопрос:</label>
+            <textarea
+              id="user-message"
+              name="user_message"
+              rows="5"
+              cols="40"
+              placeholder="Расскажите о ваших пожеланиях или задайте вопрос бариста..."
+              maxlength="500"
+            ></textarea>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Отправить сообщение</button>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Культура Кофе. Учебный проект по веб-разработке.</p>
+  </footer>
+</body>
+</html>
