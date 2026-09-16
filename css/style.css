@@ -1,74 +1,25 @@
-/* ==========================================================================
-   CSS UNITS REPORT (FOR DOCUMENTATION AND COURSEWORK DEFENSE):
-   1. px (pixels) — Absolute fixed unit. Used for crisp borders (border: 1px/2px solid),
-      corner radii (border-radius: 6px/8px), and box shadows (box-shadow).
-      This prevents sub-pixel blurring and guarantees clean contours at all screen densities.
-   2. rem (root em) — Relative to the root <html> font-size (16px).
-      Used for typography (font-size) and structural spacing (margin, padding) across
-      sections, header, and footer. Ensures fluid scalability and accessibility when
-      users adjust their browser's default font size.
-   3. % (percentage) — Relative to the parent container's width/height.
-      Applied for fluid layouts: table widths (width: 100%), responsive images (max-width: 100%),
-      and form inputs, producing a flexible, adaptive layout.
-   4. em — Relative to the element's current font-size.
-      Used for letter-spacing (0.03em) and button padding (0.55em 1.2em), scaling
-      proportionally with the button's typography.
-   5. vh (viewport height) — Percentage of the viewport height.
-      Applied to min-height: 100vh on the body container to ensure the footer
-      consistently rests at the bottom of the screen even on short pages.
-   ========================================================================== */
-
-/* ==========================================================================
-   COLOR PALETTE (EACH COLOR DOCUMENTED IN 3 FORMATS: HEX, RGB, HSL):
-   - Color 1 (Dark Roast Coffee): HEX: #2c1810 | RGB: rgb(44, 24, 16)   | HSL: hsl(17, 47%, 12%)
-   - Color 2 (Warm Caramel):      HEX: #c87a32 | RGB: rgb(200, 122, 50) | HSL: hsl(29, 60%, 49%)
-   - Color 3 (Cream Background):  HEX: #fbf8f5 | RGB: rgb(251, 248, 245)| HSL: hsl(30, 43%, 97%)
-   - Color 4 (Charcoal Black):    HEX: #2d2926 | RGB: rgb(45, 41, 38)   | HSL: hsl(26, 8%, 16%)
-   ========================================================================== */
-
-/* CSS Reset and Box Model Configuration */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ==========================================================================
-   ELEMENT SELECTORS: BASE TYPOGRAPHY AND STRUCTURE
-   ========================================================================== */
-
 body {
-  /* Viewport unit: minimum page height equal to screen height */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
-  /* FONT 1 (Body text): Web-safe clean Sans-Serif stack */
   font-family: Arial, Helvetica, sans-serif;
-  /* Root em unit: accessible base font size */
   font-size: 1rem;
-  /* Font weight */
   font-weight: 400;
   line-height: 1.6;
   text-align: left;
-
-  /* Color 3 (Cream Background): HEX format */
   background-color: #fbf8f5;
-
-  /* Color 4 (Charcoal text): HEX format */
   color: #2d2926;
 }
 
-/* ==========================================================================
-   HEADER & NAVIGATION (ELEMENTS, CLASSES, SPACING, HOVER STATES)
-   ========================================================================== */
-
 header {
-  /* Color 1 (Dark Roast Coffee): HEX format */
   background-color: #2c1810;
-  /* Rem unit for outer and inner header padding (Box Model) */
   padding: 1.25rem 2rem;
-  /* Px unit: fixed bottom accent border divider */
   border-bottom: 3px solid #c87a32;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
@@ -82,75 +33,53 @@ nav ul {
   padding: 0.25rem 0;
 }
 
-/* Navigation link styling */
 nav a {
   display: inline-block;
-  /* Remove text decoration */
   text-decoration: none;
   color: #ffffff;
-  /* FONT 1: font size and weight */
   font-size: 1.05rem;
   font-weight: 600;
-  /* Em unit: button padding scales proportionally with font size */
   padding: 0.55em 1.2em;
   letter-spacing: 0.03em;
-  /* Px unit: rounded corners */
   border-radius: 6px;
   border: 1px solid transparent;
   transition: all 0.25s ease-in-out;
 }
 
-/* Hover state: changes color, background, shadow, and elevates element */
 nav a:hover {
   color: #ffffff;
-  /* Color 2 (Warm Caramel Accent): RGB format */
   background-color: rgb(200, 122, 50);
-  /* Px unit: border and transform on hover */
   border: 1px solid #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
 
-/* CLASS SELECTOR: Active Page Indicator */
 nav a.active {
-  /* Color 2 (Warm Caramel Accent): HEX format */
   background-color: #c87a32;
   color: #ffffff;
   font-weight: 700;
-  /* Px unit: crisp white border for active tab */
   border: 1px solid #ffffff;
 }
 
-/* ==========================================================================
-   MAIN CONTENT, SECTIONS, AND HEADINGS
-   ========================================================================== */
-
 main {
   flex: 1 0 auto;
-  /* % unit: fluid width constrained by max-width in px */
   width: 92%;
   max-width: 1040px;
-  /* Rem unit: auto-centering and vertical margins (Box Model) */
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-/* FONT 2 (Headings and Blockquotes): Classic Serif */
 h1, h2 {
   font-family: Georgia, 'Times New Roman', serif;
-  /* Color 1 (Dark Roast Coffee): RGB format */
   color: rgb(44, 24, 16);
   font-weight: 700;
 }
 
 h1 {
-  /* Rem unit for scalable document title */
   font-size: 2.1rem;
   text-align: center;
-  /* Box Model: margin, padding, border */
   margin-bottom: 2rem;
   padding-bottom: 0.8rem;
-  /* Px unit: decorative accent underline */
   border-bottom: 2px solid #c87a32;
 }
 
@@ -161,22 +90,16 @@ h2 {
   margin-bottom: 1rem;
 }
 
-/* Element selector: section cards with explicit Box Model */
 section {
-  /* Color 3 (Cream Background): RGB format */
   background-color: rgb(251, 248, 245);
-  /* Rem unit for section card padding */
   margin-bottom: 2rem;
   padding: 1.75rem;
-  /* Px unit: subtle border and rounded corners */
   border: 1px solid #e5dbd0;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(44, 24, 16, 0.05);
 }
 
-/* Paragraphs and list items */
 p, li {
-  /* Color 4 (Charcoal text): RGB format */
   color: rgb(45, 41, 38);
   font-size: 1rem;
   font-weight: 400;
@@ -185,7 +108,6 @@ p, li {
 }
 
 ul, ol {
-  /* Rem unit: list marker indentation */
   padding-left: 1.8rem;
   margin-bottom: 1.2rem;
 }
@@ -195,24 +117,17 @@ li {
   text-align: left;
 }
 
-/* ==========================================================================
-   MEDIA: FIGURES, IMAGES, AND BLOCKQUOTES
-   ========================================================================== */
-
 figure {
-  /* % unit: responsive container width */
   width: 100%;
   margin: 1.5rem 0;
   padding: 0.75rem;
   background-color: #ffffff;
-  /* Px unit: thin framing border around image card */
   border: 1px solid #e0d4c6;
   border-radius: 6px;
   text-align: center;
 }
 
 figure img {
-  /* % unit: fluid scaling within container */
   max-width: 100%;
   height: auto;
   display: block;
@@ -230,23 +145,18 @@ figcaption {
 }
 
 blockquote {
-  /* FONT 2: Editorial Serif for pull quotes */
   font-family: Georgia, 'Times New Roman', serif;
-  /* Color 4 (Charcoal text): HSL format */
   color: hsl(26, 8%, 16%);
   font-size: 1.1rem;
   font-style: italic;
-  /* Box Model: vertical margins and accent border */
   margin: 1.5rem 0;
   padding: 1rem 1.5rem;
   background-color: #f3ece3;
-  /* Px unit: thick accent bar on the left */
   border-left: 5px solid #c87a32;
   border-radius: 0 6px 6px 0;
 }
 
 blockquote footer {
-  /* Reset general footer styles for nested blockquote attribution */
   background: transparent;
   border: none;
   box-shadow: none;
@@ -258,12 +168,7 @@ blockquote footer {
   text-align: right;
 }
 
-/* ==========================================================================
-   DATA TABLE STYLING
-   ========================================================================== */
-
 table {
-  /* % unit: table spans full width of parent */
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
@@ -278,23 +183,19 @@ caption {
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.15rem;
   font-weight: 700;
-  /* Color 1 (Dark Roast Coffee): RGB format */
   color: rgb(44, 24, 16);
   padding: 0.75rem 0;
   text-align: left;
 }
 
 th, td {
-  /* Rem and px units: comfortable cell spacing and borders */
   padding: 0.8rem 1rem;
   border: 1px solid #e3d7cb;
   text-align: left;
   line-height: 1.4;
 }
 
-/* Table header (thead) */
 thead th {
-  /* Color 1 (Dark Roast Coffee): HSL format */
   background-color: hsl(17, 47%, 12%);
   color: #ffffff;
   font-weight: 600;
@@ -302,28 +203,21 @@ thead th {
   text-align: center;
 }
 
-/* Row headers in table body */
 tbody th {
   font-weight: 600;
-  /* Color 1 (Dark Roast Coffee): RGB format */
   color: rgb(44, 24, 16);
   background-color: #f7f2ec;
 }
 
-/* Alternating zebra stripe for enhanced readability */
 tbody tr:nth-child(even) {
-  /* Color 3 (Cream Background): HSL format */
   background-color: hsl(30, 43%, 97%);
 }
 
-/* Row hover highlight effect */
 tbody tr:hover {
   background-color: #eee4d9;
 }
 
-/* Table footer summary (tfoot) */
 tfoot {
-  /* Color 3 (Cream Background): HSL format */
   background-color: hsl(30, 43%, 97%);
   font-style: italic;
 }
@@ -334,23 +228,15 @@ tfoot th, tfoot td {
   color: #3b2c23;
 }
 
-/* ==========================================================================
-   FORM STYLING & ACCESSIBLE :FOCUS STATES
-   ========================================================================== */
-
 form {
-  /* % unit: fluid form width */
   width: 100%;
   margin-top: 1rem;
 }
 
 fieldset {
-  /* Color 3 (Cream Background): HSL format */
   background-color: hsl(30, 43%, 97%);
-  /* Rem unit: internal and external fieldset spacing */
   margin-bottom: 1.5rem;
   padding: 1.25rem 1.5rem;
-  /* Px unit: border and corner rounding */
   border: 1px solid #d8cbbf;
   border-radius: 8px;
 }
@@ -359,7 +245,6 @@ legend {
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.15rem;
   font-weight: 700;
-  /* Color 1 (Dark Roast Coffee): RGB format */
   color: rgb(44, 24, 16);
   padding: 0 0.5rem;
 }
@@ -372,28 +257,23 @@ label {
   color: #382c23;
 }
 
-/* Text, email, date, number inputs and textarea */
 input[type="text"],
 input[type="email"],
 input[type="date"],
 input[type="number"],
 textarea {
-  /* % unit: full width of parent fieldset */
   width: 100%;
-  /* Rem unit: comfortable internal padding */
   padding: 0.65rem 0.85rem;
   margin-bottom: 0.9rem;
   font-family: inherit;
   font-size: 1rem;
   color: #2d2926;
   background-color: #ffffff;
-  /* Px unit: field border */
   border: 1px solid #c4b5a6;
   border-radius: 6px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Radio buttons and checkboxes */
 input[type="radio"],
 input[type="checkbox"] {
   display: inline-block;
@@ -404,7 +284,6 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-/* Adjacent labels for radio and checkboxes rendered inline */
 input[type="radio"] + label,
 input[type="checkbox"] + label {
   display: inline-block;
@@ -413,30 +292,24 @@ input[type="checkbox"] + label {
   cursor: pointer;
 }
 
-/* PROMINENT :FOCUS STATE ACROSS ALL FORM CONTROLS */
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="date"]:focus,
 input[type="number"]:focus,
 textarea:focus {
   outline: none;
-  /* Color 2 (Warm Caramel Accent): HSL format */
   border-color: hsl(29, 60%, 49%);
-  /* Glowing focus halo for keyboard accessibility */
   box-shadow: 0 0 0 3px rgba(200, 122, 50, 0.3);
   background-color: #ffffff;
 }
 
-/* Submit button styling */
 button[type="submit"] {
   display: inline-block;
-  /* Color 2 (Warm Caramel Accent): HSL format */
   background-color: hsl(29, 60%, 49%);
   color: #ffffff;
   font-family: inherit;
   font-size: 1.05rem;
   font-weight: 700;
-  /* Em and px units for padding and border-radius */
   padding: 0.75em 2em;
   border: 2px solid transparent;
   border-radius: 6px;
@@ -446,7 +319,6 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  /* Color 1 (Dark Roast Coffee): HEX format */
   background-color: #2c1810;
   color: #ffffff;
   border-color: #c87a32;
@@ -459,37 +331,23 @@ button[type="submit"]:focus {
   box-shadow: 0 0 0 3px rgba(200, 122, 50, 0.4);
 }
 
-/* ==========================================================================
-   UNIQUE ID SELECTOR (EXACTLY ONE ON PAGE)
-   ========================================================================== */
-
-/* Unique educational video frame on about.html */
 #espresso-guide-video {
   display: block;
-  /* % unit: fluid responsive width */
   width: 100%;
   max-width: 640px;
   height: 360px;
   margin: 1.25rem auto;
-  /* Px unit: frame border and shadow */
   border: 3px solid #2c1810;
   border-radius: 8px;
   box-shadow: 0 6px 16px rgba(44, 24, 16, 0.2);
 }
 
-/* ==========================================================================
-   PAGE FOOTER
-   ========================================================================== */
-
 footer {
-  /* Color 1 (Dark Roast Coffee): HSL format */
   background-color: hsl(17, 47%, 12%);
   color: #d8cbbf;
-  /* Rem unit: footer spacing */
   padding: 1.5rem 2rem;
   margin-top: 3rem;
   text-align: center;
-  /* Px unit: top accent border */
   border-top: 2px solid #c87a32;
 }
 
@@ -500,7 +358,6 @@ footer p {
   margin-bottom: 0;
 }
 
-/* External link styling */
 a[target="_blank"] {
   color: #c87a32;
   font-weight: 600;
@@ -509,6 +366,5 @@ a[target="_blank"] {
 }
 
 a[target="_blank"]:hover {
-  /* Color 1 (Dark Roast Coffee): HEX format */
   color: #2c1810;
 }
