@@ -1,47 +1,47 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Контакты и обратная связь — Культура кофе</title>
-  <meta name="description" content="Свяжитесь с нами: запишитесь на кофейную дегустацию или задайте вопрос экспертам о кофе.">
+  <title>Contact & Cupping Booking — Coffee Culture</title>
+  <meta name="description" content="Get in touch with us: book a specialty coffee tasting session or ask our baristas any coffee-related questions.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <nav aria-label="Основная навигация">
+    <nav aria-label="Main Navigation">
       <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="about.html">О культуре кофе</a></li>
-        <li><a href="contact.html" class="active" aria-current="page">Контакты</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Coffee Culture</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h1>Свяжитесь с нами и запишитесь на каппинг</h1>
+    <h1>Get in Touch & Book a Cupping Session</h1>
 
     <section>
-      <h2>Форма обратной связи</h2>
-      <p>Заполните форму ниже, чтобы задать вопрос экспертам по кофе или записаться на открытую дегустацию свежих сортов спешелти арабики.</p>
+      <h2>Feedback & Tasting Booking Form</h2>
+      <p>Fill out the form below to ask our coffee experts a question or reserve your spot for an open cupping session of freshly sourced specialty Arabica coffees.</p>
 
       <form action="#" method="post">
         <fieldset>
-          <legend>Личные данные</legend>
+          <legend>Personal Information</legend>
 
           <p>
-            <label for="user-name">Ваше имя:</label>
+            <label for="user-name">Your Full Name:</label>
             <input
               type="text"
               id="user-name"
               name="user_name"
-              placeholder="Например, Алексей"
+              placeholder="e.g., Alex Johnson"
               required
             >
           </p>
 
           <p>
-            <label for="user-email">Электронная почта:</label>
+            <label for="user-email">Email Address:</label>
             <input
               type="email"
               id="user-email"
@@ -52,7 +52,7 @@
           </p>
 
           <p>
-            <label for="visit-date">Желаемая дата визита или дегустации:</label>
+            <label for="visit-date">Preferred Visit or Tasting Date:</label>
             <input
               type="date"
               id="visit-date"
@@ -62,10 +62,10 @@
         </fieldset>
 
         <fieldset>
-          <legend>Кофейные предпочтения</legend>
+          <legend>Coffee Preferences</legend>
 
           <p>
-            <label for="coffee-cups">Сколько чашек кофе вы выпиваете в день?</label>
+            <label for="coffee-cups">How many cups of coffee do you drink per day?</label>
             <input
               type="number"
               id="coffee-cups"
@@ -76,7 +76,7 @@
             >
           </p>
 
-          <p>Ваш предпочитаемый кофейный напиток:</p>
+          <p>Your preferred coffee beverage:</p>
           <p>
             <input
               type="radio"
@@ -85,7 +85,7 @@
               value="espresso"
               checked
             >
-            <label for="drink-espresso">Эспрессо / Доппио</label>
+            <label for="drink-espresso">Espresso / Doppio</label>
           </p>
           <p>
             <input
@@ -94,7 +94,7 @@
               name="favorite_drink"
               value="cappuccino"
             >
-            <label for="drink-milk">Капучино / Флэт уайт</label>
+            <label for="drink-milk">Cappuccino / Flat White</label>
           </p>
           <p>
             <input
@@ -103,7 +103,7 @@
               name="favorite_drink"
               value="filter"
             >
-            <label for="drink-filter">Фильтр-кофе (V60 / аэропресс)</label>
+            <label for="drink-filter">Filter Coffee (V60 / AeroPress)</label>
           </p>
 
           <p>
@@ -113,35 +113,35 @@
               name="newsletter"
               value="yes"
             >
-            <label for="newsletter-subscription">Получать ежемесячный дайджест о свежих поступлениях зерна и мероприятиях</label>
+            <label for="newsletter-subscription">Subscribe to our monthly newsletter for new origin arrivals and community tasting events</label>
           </p>
         </fieldset>
 
         <fieldset>
-          <legend>Ваше сообщение</legend>
+          <legend>Your Message</legend>
 
           <p>
-            <label for="user-message">Комментарий или вопрос:</label>
+            <label for="user-message">Comments or Inquiries:</label>
             <textarea
               id="user-message"
               name="user_message"
               rows="5"
               cols="40"
-              placeholder="Расскажите о ваших пожеланиях или задайте вопрос бариста..."
+              placeholder="Share your coffee preferences or ask our baristas any questions..."
               maxlength="500"
             ></textarea>
           </p>
         </fieldset>
 
         <p>
-          <button type="submit">Отправить сообщение</button>
+          <button type="submit">Send Message</button>
         </p>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 Культура Кофе. Учебный проект по веб-разработке.</p>
+    <p>&copy; 2026 Coffee Culture. Web Development Coursework Project.</p>
   </footer>
 </body>
 </html>
