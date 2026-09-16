@@ -44,6 +44,6 @@ A multi-page educational website dedicated to specialty coffee, espresso brewing
 
 ## 👤 Author
 
-* **Student:** [Your Name]
-* **Course:** Web Development / Internet Technologies
+* **Student:** Ardak
+* **Course:** Web Development / Computer Science
 * **Repository:** [https://github.com/ardkzhn0111/Assignment1Web1](https://github.com/ardkzhn0111/Assignment1Web1)
